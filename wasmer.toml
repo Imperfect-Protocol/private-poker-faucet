@@ -1,0 +1,18 @@
+[package]
+name = "sadhbh-c0d3/private-poker-faucet"
+version = "0.1.0"
+description = "Private Poker PPDC Faucet"
+
+[dependencies]
+"sadhbh-c0d3/edgejs-quickjs" = "^0.1.0"
+
+[fs]
+"/app" = "./"
+
+[[command]]
+name = "run"
+module = "sadhbh-c0d3/edgejs-quickjs:edge"
+runner = "https://webc.org/runner/wasi"
+
+[command.annotations.wasi]
+main-args = ["/app/server.mjs"]
